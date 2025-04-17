@@ -130,4 +130,4 @@ Model LSTM yang dibangun berhasil memenuhi tujuan prediksi harga saham BBRI. Den
 ## Reference
 [[1]](https://journal.walisongo.ac.id/index.php/square/article/view/5626)
 [[2]](https://medium.com/@prajjwalchauhan94017/stock-prediction-and-forecasting-using-lstm-long-short-term-memory-9ff56625de73)
-[[3](https://www.publish.ojs-indonesia.com/index.php/SIBATIK/article/view/798)
+[[3]](https://www.publish.ojs-indonesia.com/index.php/SIBATIK/article/view/798)
