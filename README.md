@@ -62,10 +62,10 @@ Struktur Dataset: Dataset ini memiliki beberapa kolom utama yang merepresentasik
 ## Data Preparation
 Pada tahap ini, dilakukan serangkaian proses data preparation untuk memastikan data siap digunakan dalam model LSTM. Setiap langkah disusun secara berurutan dengan tujuan meningkatkan kualitas dan relevansi data terhadap kebutuhan model time series.
 1. Pemeriksaan Missing Value Untuk mengetahu kolom mana yang terdapat data NULL
-  * Dalam proses ini, kita akan menangani nilai hilang yang terdapat dalam dataset. Penanganan nilai hilang dilakukan dengan mengisi nilai-nilai yang hilang menggunakan median dari kolom yang bersangkutan. Hal ini bertujuan      untuk menjaga integritas data dan memastikan bahwa model yang dibangun tidak terpengaruh oleh nilai yang hilang.
+    * Dalam proses ini, kita akan menangani nilai hilang yang terdapat dalam dataset. Penanganan nilai hilang dilakukan dengan mengisi nilai-nilai yang hilang menggunakan median dari kolom yang bersangkutan. Hal ini  bertujuan      untuk menjaga integritas data dan memastikan bahwa model yang dibangun tidak terpengaruh oleh nilai yang hilang.
 2. Pemilihan Fitur
-  * Dari dataset yang tersedia, dipilih empat kolom numerik yang relevan, yaitu: open_price, high, low, dan close
+    * Dari dataset yang tersedia, dipilih empat kolom numerik yang relevan, yaitu: open_price, high, low, dan close
 3. Normalisasi Data
-  * Data numerik dinormalisasi menggunakan teknik Min-Max Scaling, yang mengubah skala nilai fitur menjadi rentang [0, 1]. Proses ini dilakukan menggunakan MinMaxScaler dari pustaka scikit-learn.
+    * Data numerik dinormalisasi menggunakan teknik Min-Max Scaling, yang mengubah skala nilai fitur menjadi rentang [0, 1]. Proses ini dilakukan menggunakan MinMaxScaler dari pustaka scikit-learn.
 4. Pembagian Data Latih dan Uji
-  * Setelah pemilihan Fitur dan Normalisasi Data, dataset di split dengan ratio 80:20, yaitu 80% untuk training dan 20% untuk testing.
+    * Setelah pemilihan Fitur dan Normalisasi Data, dataset di split dengan ratio 80:20, yaitu 80% untuk training dan 20% untuk testing.
