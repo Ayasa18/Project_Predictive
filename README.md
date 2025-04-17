@@ -10,30 +10,22 @@ Oleh karena itu, penggunaan model berbasis machine learning seperti Long Short-T
 
 ## Business Understanding
 ### Problem Statement
-*Bagaimana memprediksi harga penutupan saham BBRI menggunakan data historis?
-
-*Apakah model LSTM mampu menangkap pola jangka panjang dan memberikan prediksi yang akurat untuk saham BBRI?
-
-*Bagaimana performa prediksi model LSTM terhadap data pengujian?
+* Bagaimana memprediksi harga penutupan saham BBRI menggunakan data historis?
+* Apakah model LSTM mampu menangkap pola jangka panjang dan memberikan prediksi yang akurat untuk saham BBRI?
+* Bagaimana performa prediksi model LSTM terhadap data pengujian?
 
 ### Objectives
-*Membangun model prediksi berbasis LSTM untuk memproyeksikan harga saham BBRI.
-
-*Melakukan preprocessing data harga saham untuk kebutuhan model time series.
-
-*Mengevaluasi performa model dengan metrik akurasi regresi (MAE, RMSE dan F2-Score).
+* Membangun model prediksi berbasis LSTM untuk memproyeksikan harga saham BBRI.
+* Melakukan preprocessing data harga saham untuk kebutuhan model time series.
+* Mengevaluasi performa model dengan metrik akurasi regresi (MAE, RMSE dan F2-Score).
 
 ### Solution
 Solusi dilakukan dengan pendekatan sebagai berikut:
-*Mengambil data historis harga saham BBRI dari tahun 2016 hingga 2024.
-
-*Melakukan preprocessing data, termasuk normalisasi menggunakan MinMaxScaler dan pembentukan sliding window sepanjang 60 hari untuk membentuk sekuens input LSTM.
-
-*Membangun model LSTM dengan arsitektur sederhana dan melakukan pelatihan menggunakan data yang telah dibagi menjadi data training dan testing.
-
-*Mengevaluasi model menggunakan metrik Mean Absolute Error (MAE), Mean Squared Error (MSE) dan F2-Score.
-
-*Membandingkan nilai prediksi dan harga aktual pada data testing.
+* Mengambil data historis harga saham BBRI dari tahun 2016 hingga 2024.
+* Melakukan preprocessing data, termasuk normalisasi menggunakan MinMaxScaler dan pembentukan sliding window sepanjang 60 hari untuk membentuk sekuens input LSTM.
+* Membangun model LSTM dengan arsitektur sederhana dan melakukan pelatihan menggunakan data yang telah dibagi menjadi data training dan testing.
+* Mengevaluasi model menggunakan metrik Mean Absolute Error (MAE), Mean Squared Error (MSE) dan F2-Score.
+* Membandingkan nilai prediksi dan harga aktual pada data testing.
 
 ## Data Understanding
 Sumber Data: Dataset diperoleh dari [[IDX]](https://github.com/wildangunawan/Dataset-Saham-IDX/blob/master/Saham/LQ45/BBRI.csv) dengan kode saham BBRI, yaitu saham dari perusahaan Bank Rakyat Indonesia, yang bergerak di sektor perbankan. Data diambil untuk periode 2019-07-29 hingga 2025-02-21, mencakup lebih dari 1.356 baris data harian perdagangan saham.
