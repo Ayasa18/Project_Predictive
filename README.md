@@ -69,3 +69,36 @@ Pada tahap ini, dilakukan serangkaian proses data preparation untuk memastikan d
     * Data numerik dinormalisasi menggunakan teknik Min-Max Scaling, yang mengubah skala nilai fitur menjadi rentang [0, 1]. Proses ini dilakukan menggunakan MinMaxScaler dari pustaka scikit-learn.
 4. Pembagian Data Latih dan Uji
     * Setelah pemilihan Fitur dan Normalisasi Data, dataset di split dengan ratio 80:20, yaitu 80% untuk training dan 20% untuk testing.
+
+## Modeling
+Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan prediksi harga saham harian BBRI (Bank Rakyat Indonesia). Model yang digunakan adalah algoritma Long Short-Term Memory (LSTM) yang termasuk dalam keluarga Recurrent Neural Network (RNN). Algoritma ini dipilih karena memiliki kemampuan dalam mempelajari pola jangka panjang dan menangani data time series secara efektif.
+Tahapan Pemodelan : 
+1. Membangun Model Sequential Model dibangun menggunakan Sequential() dari Keras
+2. Arsitektur Model
+   * 4 Lapisan LSTM, masing-masing berisi 50 unit neuron.
+   * Dropout sebesar 0.2 diterapkan setelah setiap layer LSTM untuk regularisasi.
+   * Output Layer menggunakan Dense(units=4) untuk memprediksi 4 fitur sekaligus: open_price, high, low, dan close.
+3. Kompilasi Model
+   * Optimizer: adam, digunakan karena mampu menyesuaikan laju pembelajaran secara adaptif.
+   * Loss Function: mean_squared_error, sesuai untuk permasalahan regresi.
+   * Metrics: mean_absolute_error, untuk mengevaluasi performa model secara lebih interpretatif.
+4. Pelatihan Model
+   * Data pelatihan dilakukan sebanyak 50 epoch dengan batch size 32.
+   * Model divalidasi menggunakan data test yang telah disiapkan sebelumnya.
+   * Proses pelatihan dilakukan dengan fit() menggunakan data X_train dan y_train.
+Kelebihan dan Kekurangan Algoritma LSTM :
+
+| Kelebihan                                             | Kekurangan                                          |
+|-------------------------------------------------------|-----------------------------------------------------|
+| Mampu mempelajari pola jangka panjang                | Butuh waktu pelatihan lebih lama                   |
+| Cocok untuk data sekuensial seperti time series      | Cenderung kompleks dan sulit diinterpretasikan     |
+| Menghindari masalah *vanishing gradient*             | Hyperparameter tuning memerlukan eksperimen        |
+
+### Proses Improvement (Tuning)
+Karena hanya satu algoritma yang digunakan (LSTM), maka dilakukan upaya improvement sebagai berikut:
+* Menambahkan jumlah layer LSTM menjadi 4 lapisan untuk menangkap kompleksitas pola data saham.
+* Menggunakan Dropout 0.2 di tiap layer untuk menghindari overfitting akibat model terlalu kompleks.
+* Menyesuaikan arsitektur output (Dense(units=4)) agar model dapat memprediksi seluruh fitur harga sekaligus.
+Upaya ini bertujuan untuk meningkatkan kemampuan generalisasi model terhadap data baru sekaligus menjaga performa pada data pelatihan.
+
+
