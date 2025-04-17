@@ -127,4 +127,7 @@ Pada tahap evaluasi model, tujuan utama adalah untuk memahami seberapa baik mode
 
 Model LSTM yang dibangun berhasil memenuhi tujuan prediksi harga saham BBRI. Dengan **MAE** dan **RMSE** yang rendah serta **R²** yang sangat tinggi, model ini menunjukkan performa yang sangat baik dalam memprediksi harga penutupan saham berdasarkan data historis. Model ini sangat efektif dalam menangkap pola jangka panjang pergerakan harga saham BBRI dan memberikan hasil yang akurat untuk penggunaan lebih lanjut dalam proyeksi harga saham di masa depan.
 
-
+## Reference
+[[1]](https://journal.walisongo.ac.id/index.php/square/article/view/5626)
+[[2]](https://medium.com/@prajjwalchauhan94017/stock-prediction-and-forecasting-using-lstm-long-short-term-memory-9ff56625de73)
+[[3](https://www.publish.ojs-indonesia.com/index.php/SIBATIK/article/view/798)
