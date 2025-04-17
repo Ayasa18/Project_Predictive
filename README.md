@@ -17,20 +17,21 @@ Oleh karena itu, penggunaan model berbasis machine learning seperti Long Short-T
 ### Objectives
 * Membangun model prediksi berbasis LSTM untuk memproyeksikan harga saham BBRI.
 * Melakukan preprocessing data harga saham untuk kebutuhan model time series.
-* Mengevaluasi performa model dengan metrik akurasi regresi (MAE, RMSE dan F2-Score).
+* Mengevaluasi performa model dengan metrik akurasi regresi (MAE, RMSE dan R²-Score).
 
 ### Solution
 Solusi dilakukan dengan pendekatan sebagai berikut:
 * Mengambil data historis harga saham BBRI dari tahun 2016 hingga 2024.
 * Melakukan preprocessing data, termasuk normalisasi menggunakan MinMaxScaler dan pembentukan sliding window sepanjang 60 hari untuk membentuk sekuens input LSTM.
 * Membangun model LSTM dengan arsitektur sederhana dan melakukan pelatihan menggunakan data yang telah dibagi menjadi data training dan testing.
-* Mengevaluasi model menggunakan metrik Mean Absolute Error (MAE), Mean Squared Error (MSE) dan F2-Score.
+* Mengevaluasi model menggunakan metrik Mean Absolute Error (MAE), Mean Squared Error (MSE) dan R²-Score.
 * Membandingkan nilai prediksi dan harga aktual pada data testing.
 
 ## Data Understanding
 Sumber Data: Dataset diperoleh dari [[IDX]](https://github.com/wildangunawan/Dataset-Saham-IDX/blob/master/Saham/LQ45/BBRI.csv) dengan kode saham BBRI, yaitu saham dari perusahaan Bank Rakyat Indonesia, yang bergerak di sektor perbankan. Data diambil untuk periode 2019-07-29 hingga 2025-02-21, mencakup lebih dari 1.356 baris data harian perdagangan saham.
 
-Struktur Dataset: Dataset ini memiliki beberapa kolom utama yang merepresentasikan informasi harga dan volume perdagangan saham pada setiap harinya. Berikut penjelasan tiap kolom:
+Struktur Dataset: Dataset ini memiliki beberapa kolom utama yang merepresentasikan informasi harga dan volume perdagangan saham pada setiap harinya. 
+Berikut penjelasan tiap kolom:
 | Kolom                  | Tipe Data | Deskripsi                                                                 |
 |------------------------|-----------|---------------------------------------------------------------------------|
 | `date`                 | object    | Tanggal transaksi saham                                                   |
@@ -99,6 +100,31 @@ Karena hanya satu algoritma yang digunakan (LSTM), maka dilakukan upaya improvem
 * Menambahkan jumlah layer LSTM menjadi 4 lapisan untuk menangkap kompleksitas pola data saham.
 * Menggunakan Dropout 0.2 di tiap layer untuk menghindari overfitting akibat model terlalu kompleks.
 * Menyesuaikan arsitektur output (Dense(units=4)) agar model dapat memprediksi seluruh fitur harga sekaligus.
+  
 Upaya ini bertujuan untuk meningkatkan kemampuan generalisasi model terhadap data baru sekaligus menjaga performa pada data pelatihan.
+
+## Evaluation
+Pada tahap evaluasi model, tujuan utama adalah untuk memahami seberapa baik model LSTM yang dibangun dapat memprediksi harga penutupan saham BBRI berdasarkan data historis. Untuk menilai performa model, kami menggunakan beberapa metrik evaluasi yang sesuai dengan jenis masalah regresi, yaitu **Mean Absolute Error (MAE)**, **Root Mean Squared Error (RMSE)**, dan **R-squared (R²) Score**.
+
+#### Metrik Evaluasi yang Digunakan
+
+1. **Mean Absolute Error (MAE)**:
+   - MAE mengukur rata-rata perbedaan absolut antara nilai yang diprediksi oleh model dan nilai yang sebenarnya. Metrik ini memberikan gambaran yang jelas tentang kesalahan prediksi model dalam satuan yang sama dengan data asli.
+   
+2. **Root Mean Squared Error (RMSE)**:
+   - RMSE mengukur kesalahan prediksi model dalam satuan asli dan memberikan penalti lebih besar pada kesalahan yang lebih besar. Metrik ini penting untuk memahami apakah model memiliki prediksi yang jauh dari nilai aktual pada data yang lebih besar.
+   
+3. **R-squared (R²) Score**:
+   - R² mengukur proporsi variansi dalam data yang dapat dijelaskan oleh model. Nilai R² yang lebih tinggi (mendekati 1) menunjukkan bahwa model dapat menjelaskan sebagian besar variansi dalam data.
+
+#### Hasil Evaluasi Model
+
+- **MAE (0.0235)**: MAE yang relatif kecil menunjukkan bahwa prediksi model cukup mendekati nilai aktual pada rata-rata.
+- **RMSE (0.0347)**: RMSE yang rendah menunjukkan bahwa model LSTM memiliki kesalahan prediksi yang minim, dan dapat memproyeksikan harga saham dengan ketepatan yang baik dalam satuan harga saham.
+- **R² Score (0.9008)**: Nilai R² yang sangat tinggi (90%) menunjukkan bahwa model LSTM berhasil menjelaskan hampir seluruh variasi data harga saham BBRI, menandakan kemampuan model dalam menangkap pola harga saham jangka panjang.
+
+#### Kesimpulan
+
+Model LSTM yang dibangun berhasil memenuhi tujuan prediksi harga saham BBRI. Dengan **MAE** dan **RMSE** yang rendah serta **R²** yang sangat tinggi, model ini menunjukkan performa yang sangat baik dalam memprediksi harga penutupan saham berdasarkan data historis. Model ini sangat efektif dalam menangkap pola jangka panjang pergerakan harga saham BBRI dan memberikan hasil yang akurat untuk penggunaan lebih lanjut dalam proyeksi harga saham di masa depan.
 
 
