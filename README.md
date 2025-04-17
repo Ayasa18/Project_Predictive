@@ -1,7 +1,9 @@
-# Laporan Proyek Machine Learning - Aditiya Saputra
+# Laporan Proyek Machine Learning - Aditiya Saputra (Predictive Analytics untuk Prediksi Harga Saham BBRI (LQ45))
 
 ## Domain Proyek
 
-Pasar modal Indonesia terus mengalami pertumbuhan yang signifikan, dengan jumlah investor mencapai 11,42 juta per Juli 2023 menurut data dari KSEI. Mayoritas dari investor tersebut (64,37%) memiliki latar belakang pendidikan SMA ke bawah, yang menunjukkan kebutuhan akan informasi dan edukasi yang lebih baik dalam membuat keputusan investasi. Salah satu pendekatan yang dapat digunakan untuk membantu investor dalam mengambil keputusan adalah melalui analisis teknikal berbasis Machine Learning.
+Prediksi harga saham merupakan aspek fundamental dalam analisis pasar keuangan, khususnya dalam investasi dan manajemen risiko, di mana kemampuan untuk memperkirakan pergerakan harga secara akurat dapat meningkatkan efisiensi pengambilan keputusan, meminimalisir risiko, dan memaksimalkan keuntungan. Namun, fluktuasi harga secara real-time akibat kondisi pasar yang berubah-ubah, gangguan eksternal, serta faktor makroekonomi dan psikologis, menjadi tantangan bagi metode prediksi tradisional.
 
-Dalam proyek ini, saya memanfaatkan model Long Short-Term Memory (LSTM), sebuah varian dari Recurrent Neural Network (RNN), untuk memprediksi harga saham harian dari perusahaan Indo Tambangraya Megah Tbk. (ITMG). Untuk meningkatkan akurasi prediksi, saya mengintegrasikan dua indikator teknikal populer, yaitu Relative Strength Index (RSI) dan Moving Average 50 (MA 50), ke dalam model.
+Metode prediksi harga saham konvensional seperti analisis teknikal dan model statistik klasik (misalnya ARIMA) sering kali bergantung pada asumsi linieritas dan kestasioneran data. Model-model ini cenderung kesulitan dalam menangani perilaku pasar yang dinamis dan kompleks. Selain itu, keberadaan noise pasar, seperti spekulasi mendadak atau berita yang memicu volatilitas, memperburuk performa model tradisional dibandingkan dengan pendekatan berbasis pembelajaran mesin [[1]] (https://journal.walisongo.ac.id/index.php/square/article/view/5626). Noise dan ketidakpastian ini adalah bagian yang tak terelakkan dari lingkungan pasar nyata.
+
+Oleh karena itu, penggunaan model berbasis machine learning seperti Long Short-Term Memory (LSTM) menjadi lebih fleksibel dalam menghadapi fluktuasi real-time harga saham BBRI. Model ini mampu mengenali pola non-linier dan hubungan jangka panjang dalam data historis, sehingga memberikan prediksi yang lebih adaptif terhadap dinamika pasar yang terus berubah.
