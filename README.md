@@ -31,3 +31,31 @@ Solusi dilakukan dengan pendekatan sebagai berikut:
 Sumber Data: Dataset diperoleh dari [[IDX]](https://github.com/wildangunawan/Dataset-Saham-IDX/blob/master/Saham/LQ45/BBRI.csv) dengan kode saham BBRI, yaitu saham dari perusahaan Bank Rakyat Indonesia, yang bergerak di sektor perbankan. Data diambil untuk periode 2019-07-29 hingga 2025-02-21, mencakup lebih dari 1.356 baris data harian perdagangan saham.
 
 Struktur Dataset: Dataset ini memiliki beberapa kolom utama yang merepresentasikan informasi harga dan volume perdagangan saham pada setiap harinya. Berikut penjelasan tiap kolom:
+| Kolom                  | Tipe Data | Deskripsi                                                                 |
+|------------------------|-----------|---------------------------------------------------------------------------|
+| `date`                 | object    | Tanggal transaksi saham                                                   |
+| `previous`             | float64   | Harga penutupan hari sebelumnya                                          |
+| `open_price`           | float64   | Harga pembukaan hari ini                                                 |
+| `first_trade`          | float64   | Harga transaksi pertama hari ini                                         |
+| `high`                 | float64   | Harga tertinggi hari ini                                                 |
+| `low`                  | float64   | Harga terendah hari ini                                                  |
+| `close`                | float64   | Harga penutupan hari ini                                                 |
+| `change`               | float64   | Selisih harga penutupan hari ini dengan hari sebelumnya                  |
+| `volume`               | float64   | Volume transaksi dalam satuan lot                                        |
+| `value`                | float64   | Nilai transaksi dalam satuan Rupiah                                      |
+| `frequency`            | float64   | Frekuensi atau jumlah transaksi                                          |
+| `index_individual`     | float64   | Nilai indeks individual saham (jika tersedia)                            |
+| `offer`                | float64   | Harga penawaran tertinggi (ask) saat penutupan                           |
+| `offer_volume`         | float64   | Volume pada harga penawaran tertinggi                                    |
+| `bid`                  | float64   | Harga permintaan tertinggi (bid) saat penutupan                          |
+| `bid_volume`           | float64   | Volume pada harga permintaan tertinggi                                   |
+| `listed_shares`        | float64   | Jumlah total saham yang tercatat                                         |
+| `tradeble_shares`      | float64   | Jumlah saham yang dapat diperdagangkan (free float)                      |
+| `weight_for_index`     | float64   | Bobot saham terhadap indeks (jika ada)                                   |
+| `foreign_sell`         | float64   | Jumlah penjualan saham oleh investor asing                               |
+| `foreign_buy`          | float64   | Jumlah pembelian saham oleh investor asing                               |
+| `delisting_date`       | float64   | Tanggal delisting (tidak relevan, seluruh baris bernilai NaN)            |
+| `non_regular_volume`   | float64   | Volume transaksi non-reguler (tender offer, crossing)                    |
+| `non_regular_value`    | float64   | Nilai transaksi non-reguler                                              |
+| `non_regular_frequency`| float64   | Frekuensi transaksi non-reguler                                          |
+
